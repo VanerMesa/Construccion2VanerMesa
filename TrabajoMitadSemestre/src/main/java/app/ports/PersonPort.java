@@ -5,7 +5,7 @@ import app.domain.models.Person;
 public interface PersonPort {
 	
 	public boolean existPerson(long document);
-	void savePerson(Person Person);
-	public boolean existsByDocument(long document);
-
+    public void savePerson(Person person);
+    public Person findByDocument(long document);
+	
 }

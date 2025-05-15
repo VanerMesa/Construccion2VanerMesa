@@ -14,22 +14,55 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "user")
-@Setter
+@Table(name = "Users")
 @Getter
+@Setter
 @NoArgsConstructor
 
 public class UserEntity {
+
 	@Id
-	@Column (name = "user_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "userId")
 	private long userId;
-	@Column (name = "user_name")
-	private String username;
-	@Column (name = "password")
-    private String password;
-	@JoinColumn (name = "person_id")
+	@JoinColumn(name = "personId")
 	@OneToOne
-    private PersonEntity person;
+	private PersonEntity personId;
+	@Column(name = "userName")
+	private String userName;
+	@Column(name = "password")
+	private String password;
+
+	public long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
+
+	public PersonEntity getPersonId() {
+		return personId;
+	}
+
+	public void setPersonId(PersonEntity personId) {
+		this.personId = personId;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 }
