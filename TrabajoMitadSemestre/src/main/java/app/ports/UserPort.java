@@ -10,6 +10,7 @@ public interface UserPort {
 	public boolean existUserName(String userName);
     public void saveUser(User user);
     public User findByPersonId(Person person);
-    public User findByUserName(User user);
+    public User findByUserName(User userName);
+	User findByUserName(String userName);
 
 }
